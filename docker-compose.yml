@@ -1,0 +1,20 @@
+version: '3'
+services:
+  test:
+    build:
+      context: . 
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+    command: ["npm","test"]
+#  visits:
+#    stdin_open: true
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.dev
+#    volumes:
+#      - /usr/app/node_modules
+#      - ./:/usr/app
+#    ports:
+#      - 8080:3000
